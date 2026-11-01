@@ -1,0 +1,22 @@
+.badge {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.badge-vert {
+  background: green;
+}
+
+.badge-rouge {
+  background: #c33;
+}
+
+.badge-orange {
+  background: #b65c00;
+}
+
+.badge-gris {
+  background: gray;
+}

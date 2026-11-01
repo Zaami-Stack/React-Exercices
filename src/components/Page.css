@@ -1,0 +1,21 @@
+.page {
+  border: 1px solid #aaa;
+}
+
+.page-haut {
+  background: #66549a;
+  color: white;
+  padding: 12px;
+  font-size: 20px;
+}
+
+.page-milieu {
+  padding: 0 12px;
+}
+
+.page-bas {
+  background: #eee;
+  padding: 8px;
+  text-align: center;
+  font-size: 13px;
+}

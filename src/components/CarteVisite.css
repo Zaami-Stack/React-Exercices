@@ -1,0 +1,20 @@
+.carte {
+  border: 1px solid #aaa;
+  padding: 15px;
+  min-width: 170px;
+  background: #f3f3f3;
+}
+
+.carte h3 {
+  margin: 0 0 8px;
+}
+
+.metier {
+  margin: 0;
+}
+
+.ville {
+  color: gray;
+  font-size: 13px;
+  margin-bottom: 0;
+}
