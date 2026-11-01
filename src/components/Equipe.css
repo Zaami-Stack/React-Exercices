@@ -1,0 +1,14 @@
+.equipe {
+  border: 1px solid #8aaabc;
+}
+
+.equipe-haut {
+  background: #46778f;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.equipe-corps {
+  padding: 0 12px;
+}

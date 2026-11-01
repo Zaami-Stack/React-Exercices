@@ -1,0 +1,21 @@
+.produit {
+  border-left: 3px solid teal;
+  padding: 5px 12px;
+  margin-bottom: 15px;
+}
+
+.produit h3 {
+  margin: 0;
+}
+
+.prix {
+  color: teal;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.tags {
+  color: #555;
+  font-size: 14px;
+  margin: 0;
+}

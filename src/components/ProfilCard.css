@@ -1,0 +1,19 @@
+.profil {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid #aaa;
+  padding: 10px 15px;
+  background: #f5f5f5;
+  text-align: left;
+}
+
+.profil span {
+  font-size: 13px;
+}
+
+.profil.actif {
+  background: #66549a;
+  color: white;
+  border-color: #66549a;
+}

@@ -1,0 +1,14 @@
+.encadre {
+  border: 1px solid #c9a83b;
+  margin-bottom: 12px;
+}
+
+.encadre-titre {
+  background: #f5d77b;
+  padding: 8px;
+  font-weight: bold;
+}
+
+.encadre-corps {
+  padding: 0 12px;
+}
