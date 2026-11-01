@@ -15,6 +15,7 @@ import Detail from './components/Detail'
 import Equipe from './components/Equipe'
 import Membre from './components/Membre'
 
+
 function App() {
   const [likes, setLikes] = useState(0)
   const [total, setTotal] = useState(0)
@@ -124,6 +125,8 @@ function App() {
         </Equipe>
         <p className="dernier" aria-live="polite">Dernier contact : {dernierContact}</p>
       </section>
+
+
 
     </main>
   )
