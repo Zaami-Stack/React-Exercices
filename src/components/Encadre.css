@@ -1,0 +1,19 @@
+.encadre {
+  border: 2px solid #fbbf24;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.encadre-titre {
+  background: #fbbf24;
+  padding: 6px 12px;
+  font-weight: 800;
+  color: #451a03;
+}
+
+.encadre-corps {
+  padding: 6px 14px;
+  background: #fffbeb;
+  font-size: 14px;
+}
