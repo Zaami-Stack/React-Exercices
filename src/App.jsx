@@ -1,122 +1,173 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
+import {useState} from 'react'
+import Salutation from './components/bonjour'
+import Cartevisite from './components/CarteVisite'
+import Badge from './components/Badge'
+import Encadre from './components/Encadre'
+import Produit from './components/Produit'
+import {Page, Article} from './components/Page'
+import BoutonJaime from './components/BoutonJaime'
+import {ProduitAchat, Total} from './components/MiniPanier'
+import {ProfilCard, Detail} from './components/SelectProfil'
+import {Equipe, Membre} from './components/MiniProjet'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [likes, setLikes] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [nombre, setNombre] = useState(0);
+  function ajouterProduit(prix) {
+    setTotal(total + prix);
+    setNombre(nombre + 1);
+  }
+  const [selection, setSelection] = useState("");
+   const [dernierContact, setDernierContact] =
+    useState("Personne");
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
+    <main className='app'>
+      <div>
+        <Salutation nom="Sofia" />
+        <Salutation nom="Karim" />
+        <Salutation nom="Lina" />
+      </div>
+      <div>
+        <Cartevisite nom="Lasfar Rayane" 
+        metier="Developpeur"
+        ville="Casablanca"
+        />
+        <Cartevisite nom="Zaami Anass" 
+        metier="Developpeur"
+        ville="Casablanca"
+        />
+      </div>
+      <div>
+        <Badge texte="Nouveau" couleur='green'/>
+        <Badge texte="Promo" couleur='red'/>
+        <Badge texte="Stock limite" couleur='orange'/>
+        <Badge texte="Standard" />
+      </div>
+      <div>
+        <Encadre titre="Astuce">
           <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+            Utilisez les composants React pour organiser
+            votre code et le rendre reutilisable
           </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
+        </Encadre>
+        <Encadre titre="A retenir">
           <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
+            <li>Les composants sont reutilisable.</li>
+            <li>Les props transmettent des donnees.</li>
+            <li>Children permet d'integrer du contenu</li>
           </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        </Encadre>
+      </div>
+      <div>
+        <Produit 
+          nom="Clavier Magnetique MAG68 HE"
+          prix={470}
+          tags={['bureau', 'usb', 'rgb', 'gaming', 'magnetic']}
+        />
+        <Produit 
+          nom="MCHOSE A7 V2 Blanc 8k Hz"
+          prix={649}
+          tags={['bureau', 'wireless', 'gaming', '8k Hz']}
+        />
+        <Produit 
+          nom="HyperX Cloud III"
+          prix={1200}
+          tags={['bureau', 'usb', 'gaming']}
+        />
+      </div>
+      <div>
+        <Page titre="Ma première page React">
+          <Article
+              titre="Premier article"
+              texte="Bienvenue dans ma première page React."
+          />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+          <Article
+              titre="Deuxième article"
+              texte="Les composants React permettent de réutiliser le code."
+          />
+        </Page>
+      </div>
+      <div className="container">
+        <p className="compteur">
+          J'aime : {likes}
+        </p>
+
+        <BoutonJaime
+          onJaime={() => setLikes(likes + 1)}
+        />
+      </div>
+      <div className="panier">
+        <ProduitAchat
+          nom="Clavier"
+          prix={49.9}
+          onAjouter={ajouterProduit}
+        />
+
+        <ProduitAchat
+          nom="Souris"
+          prix={19.9}
+          onAjouter={ajouterProduit}
+        />
+
+        <Total total={total} nombre={nombre} />
+      </div>
+      <div>
+        <div className="rangee">
+          <ProfilCard
+            nom="Sofia"
+            role="Front-end"
+            actif={selection === "Sofia"}
+            onChoisir={setSelection}
+          />
+
+          <ProfilCard
+            nom="Karim"
+            role="Back-end"
+            actif={selection === "Karim"}
+            onChoisir={setSelection}
+          />
+
+          <ProfilCard
+            nom="Lina"
+            role="Design"
+            actif={selection === "Lina"}
+            onChoisir={setSelection}
+          />
+        </div>
+
+        <Detail nom={selection} />
+      </div>
+      <div>
+        <Equipe titre="Notre équipe">
+          <Membre
+            nom="Sofia"
+            role="Front-end"
+            competences={["React", "CSS"]}
+            onContact={setDernierContact}
+          >
+            Passionnée par la création d'interfaces web
+            modernes et dynamiques.
+          </Membre>
+
+          <Membre
+            nom="Karim"
+            role="Back-end"
+            competences={["Node", "SQL"]}
+            onContact={setDernierContact}
+          >
+            Spécialisé dans le développement serveur
+            et les bases de données.
+          </Membre>
+        </Equipe>
+
+        <p className="dernier">
+          Dernier contact : {dernierContact}
+        </p>
+      </div>
+    </main>
   )
 }
-
-export default App
